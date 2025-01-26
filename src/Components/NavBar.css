@@ -1,0 +1,63 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    color: #f1c40f;
+  }
+  
+  /* Estilos para el widget del carrito */
+  .cart-widget {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-widget button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cart-widget button:hover {
+    background-color: #e67e22;
+  }
+  
+  .cart-count {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+  }
+  

@@ -1,19 +1,18 @@
-
-import './App.css'
-import Navbar from './Components/NavBar'
-import ItemList from './Components/ItemLIst'
-import Footer from './Components/Footer'
+// src/App.jsx
+import React from "react";
+import "./App.css";
+import NavBar from "./Components/NavBar";
+import ItemListContainer from "./Components/ItemListContainer";
+import Footer from "./Components/Footer";
 
 function App() {
-  
-
   return (
     <>
-      <Navbar></Navbar>
-      <ItemList title={"Listado de Productos"}></ItemList>
-      <Footer></Footer>
+      <NavBar />
+      <ItemListContainer title="Listado de Productos" />
+      <Footer />
     </>
- )
+  );
 }
 
-export default App
+export default App;
