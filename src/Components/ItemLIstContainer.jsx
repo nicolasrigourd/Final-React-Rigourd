@@ -1,7 +1,7 @@
 
 // src/Components/ItemListContainer.jsx
 import React from 'react';
-import ItemList from './itemList'; // Asegúrate de que este archivo existe y está correctamente nombrado
+import ItemList from './itemList'; 
 
 const ItemListContainer = ({ title }) => {
   return (
