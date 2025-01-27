@@ -17,10 +17,11 @@ const Navbar = () => {
         <span>MiTienda</span>
       </div>
       <ul className="nav-links">
-        <li><a href="/productos">Productos</a></li>
-        <li><a href="/ofertas">Ofertas</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a href="/perfil">Perfil</a></li>
+        <li><a href="/productos">Smart Tvs</a></li>
+        <li><a href="/ofertas">Consolas</a></li>
+        <li><a href="/contacto">Camaras Digitales</a></li>
+        <li><a href="/perfil">Smartphones</a></li>
+        <li><a href="/perfil">Notebooks</a></li>
       </ul>
 
       {/* Widget del carrito */}
