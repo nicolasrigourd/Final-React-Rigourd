@@ -1,12 +1,12 @@
-
+// src/Components/NavBar.jsx
 import React, { useState } from 'react';
-import "../assets/cart.svg"
+import { Link } from 'react-router-dom';
+import "../assets/cart.svg";
 import CartWidget from './CartWidget';
 
 const Navbar = () => {
-  const [cartCount, setCartCount] = useState(0); 
+  const [cartCount, setCartCount] = useState(0);
 
-  // Función para aumentar el número de artículos en el carrito (para prueba)
   const addToCart = () => {
     setCartCount(cartCount + 1);
   };
@@ -17,16 +17,16 @@ const Navbar = () => {
         <span>MiTienda</span>
       </div>
       <ul className="nav-links">
-        <li><a href="/productos">Smart Tvs</a></li>
-        <li><a href="/ofertas">Consolas</a></li>
-        <li><a href="/contacto">Camaras Digitales</a></li>
-        <li><a href="/perfil">Smartphones</a></li>
-        <li><a href="/perfil">Notebooks</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/categoria/1">Smart Tvs</Link></li>
+        <li><Link to="/categoria/2">Consolas</Link></li>
+        <li><Link to="/categoria/3">Camaras Digitales</Link></li>
+        <li><Link to="/categoria/4">Smartphones</Link></li>
+        <li><Link to="/categoria/5">Notebooks</Link></li>
       </ul>
 
-      {/* Widget del carrito */}
       <div className="cart-widget">
-        <CartWidget></CartWidget>
+        <CartWidget />
       </div>
     </nav>
   );

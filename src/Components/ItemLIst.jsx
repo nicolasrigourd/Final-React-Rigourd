@@ -1,25 +1,19 @@
-// ItemList.jsx
-import React, { useState, useEffect } from "react";
-import { productosMock } from "../productos.mock"; 
-import Item from "../Components/item"; 
+// src/Components/ItemList.jsx
+import React from "react";
+import Item from "./Item"; 
 
-function ItemList() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    
-    setProducts(productosMock);
-    
-     setTimeout(() => setProducts(productosMock), 2000);
-  }, []);
-
+const ItemList = ({ productos }) => {
   return (
-    <div className="item-list-grid">
-      {products.map((producto) => (
-        <Item key={producto.id} producto={producto} />
-      ))}
+    <div className="item-list-style-grid">
+      {productos.length > 0 ? (
+        productos.map((producto) => (
+          <Item key={producto.id} producto={producto} />
+        ))
+      ) : (
+        <p>No se encontraron productos en esta categoría.</p>
+      )}
     </div>
   );
-}
+};
 
 export default ItemList;
