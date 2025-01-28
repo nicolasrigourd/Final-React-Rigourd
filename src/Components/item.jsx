@@ -1,11 +1,17 @@
-// Item.jsx
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 
 function Item({ producto }) {
-  const { nombre, precio, imagen } = producto;
+  const { nombre, precio, imagen, descripcion } = producto;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleVerDetalles = () => {
-    console.log("Ver detalles de:", nombre);
+    setIsModalOpen(true); // Abre el modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Cierra el modal
   };
 
   return (
@@ -16,8 +22,17 @@ function Item({ producto }) {
       <button className="item-button" onClick={handleVerDetalles}>
         Ver Detalles
       </button>
+
+      {/* Renderizamos el modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        producto={{ nombre, precio, descripcion, imagen }}
+      />
     </div>
   );
 }
 
 export default Item;
+
+
