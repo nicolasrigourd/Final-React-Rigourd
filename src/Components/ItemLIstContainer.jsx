@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; 
 import { productosMock } from '../productos.mock'; 
 import ItemList from './ItemList'; 
+import AuxComponent from './AuxComponent';
 
 const ItemListContainer = ({ title }) => {
   const { categoriaId } = useParams(); 
@@ -14,8 +15,9 @@ const ItemListContainer = ({ title }) => {
     );
     setProductos(productosFiltrados);
   }, [categoriaId]);
-
+<AuxComponent/>
   return (
+    
     <div className="item-list-container">
       {/* Título del contenedor */}
       <h2 className="item-list-title-container">{title}</h2>
