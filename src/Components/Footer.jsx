@@ -1,4 +1,4 @@
-// src/components/Footer.jsx
+
 import React from 'react';
 
 
@@ -6,13 +6,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        {/* Columna de información */}
         <div className="footer-column">
           <h3>Mi Tienda</h3>
           <p>Tu tienda en línea para productos increíbles.</p>
         </div>
 
-        {/* Columna de enlaces */}
+        
         <div className="footer-column">
           <h4>Enlaces</h4>
           <ul>
@@ -23,7 +22,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Columna de redes sociales */}
+       
         <div className="footer-column">
           <h4>Síguenos</h4>
           <ul className="social-links">
@@ -34,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Pie de página con derechos de autor */}
+      
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Nicolas Rigourd. Todos los derechos reservados.</p>
       </div>

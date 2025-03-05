@@ -1,7 +1,7 @@
-// src/productos.mock.jsx
+
 
 export const productosMock = [
-  // Categoría 1: Smart TVs
+ 
   {
     id: 1,
     nombre: "Smart TV LG 43'' 4K",

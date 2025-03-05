@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import ItemCount from "./ItemCount";
+import { useCart } from "../Contexts/CartContext.jsx"; 
 
 const Modal = ({ isOpen, onClose, producto }) => {
+  const { addToCart } = useCart(); // Usamos el hook del contexto
   const [cantidad, setCantidad] = useState(1);
   const [subtotal, setSubtotal] = useState(producto.precio);
+
+  useEffect(() => {
+    setSubtotal(cantidad * producto.precio);
+  }, [cantidad, producto.precio]);
 
   const handleIncrement = () => {
     if (cantidad < producto.stock) {
       setCantidad(cantidad + 1);
-      setSubtotal((cantidad + 1) * producto.precio);
     }
   };
 
   const handleDecrement = () => {
     if (cantidad > 1) {
       setCantidad(cantidad - 1);
-      setSubtotal((cantidad - 1) * producto.precio);
     }
   };
 
-  const handleAgregarAlCarrito = () => {
-    console.log("Producto agregado al carrito", {
-      nombre: producto.nombre,
-      cantidad,
-      subtotal,
-    });
-    onClose();  // Cerrar el modal al agregar el producto
-  };
+const handleAgregarAlCarrito = () => {
+  addToCart(producto, cantidad); 
+  onClose();
+};
 
-  // Cerrar el modal si se hace clic fuera del contenido
   const handleOutsideClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();

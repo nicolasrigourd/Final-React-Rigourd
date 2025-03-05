@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import Modal from "./Modal";
 
 function Item({ producto }) {
-  const { nombre, precio, imagen, descripcion } = producto;
+  const { nombre, precio, imagen, descripcion, stock } = producto; // Desestructuración incluye stock
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,16 +24,14 @@ function Item({ producto }) {
         Ver Detalles
       </button>
 
-      {/* Renderizamos el modal */}
+      
       <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        producto={{ nombre, precio, descripcion, imagen }}
+        producto={{ nombre, precio, descripcion, imagen, stock }}  
       />
     </div>
   );
 }
 
 export default Item;
-
-

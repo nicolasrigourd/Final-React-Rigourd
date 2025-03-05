@@ -1,7 +1,15 @@
-import { getFirestore, collection, getDocs, addDoc, query, where } from "firebase/firestore";
+
+import { 
+  getFirestore, 
+  collection, 
+  getDocs, 
+  addDoc, 
+  query, 
+  where 
+} from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
-// Tu configuración de Firebase
+
 const firebaseConfig = {
   apiKey: "AIzaSyBvHgIFGeu5Puc_TpWFsYV94ZDu5bTPwjA",
   authDomain: "mitienda-b221b.firebaseapp.com",
@@ -15,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Función para obtener productos de Firebase
+
 const getProducts = async (categoriaId = null) => {
   try {
     let q = collection(db, "productos");
@@ -36,7 +44,7 @@ const getProducts = async (categoriaId = null) => {
   }
 };
 
-// Función para subir productos
+
 const uploadProducts = async (productos) => {
   try {
     const productsCollection = collection(db, "productos");
@@ -49,5 +57,23 @@ const uploadProducts = async (productos) => {
   }
 };
 
-// Exporta las funciones
-export { db, getProducts, uploadProducts };
+
+const createOrder = async (orderData) => {
+  try {
+    const orderCollection = collection(db, "orders");
+    const docRef = await addDoc(orderCollection, orderData);
+    console.log("Orden creada con ID:", docRef.id);
+    return docRef.id; 
+  } catch (error) {
+    console.error("Error al crear la orden:", error);
+    throw error; 
+  }
+};
+
+
+export { 
+  db, 
+  getProducts, 
+  uploadProducts,
+  createOrder 
+};

@@ -1,15 +1,13 @@
-// src/Components/NavBar.jsx
-import React, { useState } from 'react';
+
+import React from 'react';
 import { Link } from 'react-router-dom';
-import "../assets/cart.svg";
 import CartWidget from './CartWidget';
+import { useCart } from '../Contexts/CartContext'; 
 
 const Navbar = () => {
-  const [cartCount, setCartCount] = useState(0);
-
-  const addToCart = () => {
-    setCartCount(cartCount + 1);
-  };
+  
+  const { cart } = useCart(); 
+  const cartCount = cart.reduce((total, item) => total + item.cantidad, 0);
 
   return (
     <nav className="navbar">
@@ -26,7 +24,7 @@ const Navbar = () => {
       </ul>
 
       <div className="cart-widget">
-        <CartWidget />
+        <CartWidget cartCount={cartCount} />
       </div>
     </nav>
   );
